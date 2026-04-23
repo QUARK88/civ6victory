@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilization 6 Most Convenient Victory Types For Every Leader/Civilization Combo</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        html,
+        body {
+            background-color: #000;
+            padding: 0;
+            margin: 0;
+            width: fit-content;
+            height: fit-content;
+        }
+        #jerseyGrid {
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+            grid-template-rows: repeat(6, auto);
+            border: solid 3px #000;
+            gap: 3px;
+            background-color: #000;
+        }
+        .cellH {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+        .cell {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 104px;
+            padding: 4px;
+            gap: 0;
+        }
+        .blank {
+            background-color: #111;
+        }
+        .domH {
+            background-color: #6c3435;
+        }
+        .sciH {
+            background-color: #144d6e;
+        }
+        .culH {
+            background-color: #553b68;
+        }
+        .relH {
+            background-color: #633f0c;
+        }
+        .dipH {
+            background-color: #005551;
+        }
+        .dom {
+            background-color: #361a1a;
+        }
+        .sci {
+            background-color: #0a2637;
+        }
+        .cul {
+            background-color: #2b1d34;
+        }
+        .rel {
+            background-color: #312006;
+        }
+        .dip {
+            background-color: #002b28;
+        }
+        .jersey {
+            display: flex;
+            height: 96px;
+            width: 96px;
+            padding: 8px;
+            margin: 4px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000, 0 0 1.5px #000;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+        }    </style>
+</head>
+<body>
+    <div id="jerseyGrid">
+        <div class="cellH blank"></div>
+        <div class="cellH domH">Domination<br>(Primary)</div>
+        <div class="cellH sciH">Scientific<br>(Primary)</div>
+        <div class="cellH culH">Cultural<br>(Primary)</div>
+        <div class="cellH relH">Religious<br>(Primary)</div>
+        <div class="cellH dipH">Diplomatic<br>(Primary)</div>
+        <div class="cellH domH">Domination<br>(Secondary)</div>
+        <div class="cell blank"></div>
+        <div class="cell sci"></div>
+        <div class="cell cul"></div>
+        <div class="cell rel"></div>
+        <div class="cell dip"></div>
+        <div class="cellH sciH">Scientific<br>(Secondary)</div>
+        <div class="cell dom"></div>
+        <div class="cell blank"></div>
+        <div class="cell cul"></div>
+        <div class="cell rel"></div>
+        <div class="cell dip"></div>
+        <div class="cellH culH">Cultural<br>(Secondary)</div>
+        <div class="cell dom"></div>
+        <div class="cell sci"></div>
+        <div class="cell blank"></div>
+        <div class="cell rel"></div>
+        <div class="cell dip"></div>
+        <div class="cellH relH">Religious<br>(Secondary)</div>
+        <div class="cell dom"></div>
+        <div class="cell sci"></div>
+        <div class="cell cul"></div>
+        <div class="cell blank"></div>
+        <div class="cell dip"></div>
+        <div class="cellH dipH">Diplomatic<br>(Secondary)</div>
+        <div class="cell dom"></div>
+        <div class="cell sci"></div>
+        <div class="cell cul"></div>
+        <div class="cell rel"></div>
+        <div class="cell blank"></div>
+    </div>
+</body>
+<script>
+    const jerseyData = [
+        [
+            "American",
+            "Abraham Lincoln",
+            0,
+            1
+        ],
+        [
+            "American",
+            "Bull Moose Teddy Roosevelt",
+            2,
+            4
+        ],
+        [
+            "American",
+            "Rough Rider Teddy Roosevelt",
+            4,
+            0
+        ],
+        [
+            "Arabian",
+            "Sultan Saladin",
+            3,
+            0
+        ],
+        [
+            "Arabian",
+            "Vizier Saladin",
+            3,
+            1
+        ],
+        [
+            "Australian",
+            "John Curtin",
+            1,
+            2
+        ],
+        [
+            "Aztec",
+            "Montezuma",
+            0,
+            1
+        ],
+        [
+            "Babylonian",
+            "Hammurabi",
+            0,
+            2
+        ],
+        [
+            "Brazilian",
+            "Pedro II",
+            2,
+            1
+        ],
+        [
+            "Byzantine",
+            "Basil II",
+            3,
+            0
+        ],
+        [
+            "Byzantine",
+            "Theodora",
+            3,
+            2
+        ],
+        [
+            "Canadian",
+            "Wilfrid Laurier",
+            4,
+            2
+        ],
+        [
+            "Chinese",
+            "Chinese Kublai Khan",
+            1,
+            2
+        ],
+        [
+            "Chinese",
+            "Mandate of Heaven Qin Shi Huang",
+            1,
+            2
+        ],
+        [
+            "Chinese",
+            "Unifier Qin Shi Huang",
+            1,
+            0
+        ],
+        [
+            "Chinese",
+            "Wu Zetian",
+            1,
+            2
+        ],
+        [
+            "Chinese",
+            "Yongle",
+            1,
+            2
+        ],
+        [
+            "Cree",
+            "Poundmaker",
+            4,
+            1
+        ],
+        [
+            "Dutch",
+            "Wilhelmina",
+            1,
+            2
+        ],
+        [
+            "Egyptian",
+            "Egyptian Cleopatra",
+            3,
+            2
+        ],
+        [
+            "Egyptian",
+            "Ptolemaic Cleopatra",
+            2,
+            3
+        ],
+        [
+            "Egyptian",
+            "Ramses II",
+            2,
+            1
+        ],
+        [
+            "English",
+            "Age of Empire Victoria",
+            0,
+            1
+        ],
+        [
+            "English",
+            "Age of Steam Victoria",
+            1,
+            0
+        ],
+        [
+            "English",
+            "English Eleanor of Aquitaine",
+            2,
+            1
+        ],
+        [
+            "English",
+            "Elizabeth I",
+            0,
+            1
+        ],
+        [
+            "Ethiopian",
+            "Menelik II",
+            3,
+            2
+        ],
+        [
+            "French",
+            "Black Queen Catherine de Medici",
+            2,
+            0
+        ],
+        [
+            "French",
+            "Magnificence Catherine de Medici",
+            2,
+            0
+        ],
+        [
+            "French",
+            "French Eleanor of Aquitaine",
+            2,
+            0
+        ],
+        [
+            "Gallic",
+            "Ambiorix",
+            0,
+            1
+        ],
+        [
+            "Georgian",
+            "Tamar",
+            3,
+            4
+        ],
+        [
+            "German",
+            "Frederick Barbarossa",
+            0,
+            1
+        ],
+        [
+            "German",
+            "Ludwig II",
+            2,
+            1
+        ],
+        [
+            "Gran Colombian",
+            "Simón Bolívar",
+            0,
+            3
+        ],
+        [
+            "Greek",
+            "Gorgo",
+            2,
+            0
+        ],
+        [
+            "Greek",
+            "Pericles",
+            2,
+            4
+        ],
+        [
+            "Hungarian",
+            "Matthias Corvinus",
+            0,
+            4
+        ],
+        [
+            "Incan",
+            "Pachacuti",
+            1,
+            3
+        ],
+        [
+            "Indian",
+            "Chandragupta",
+            3,
+            0
+        ],
+        [
+            "Indian",
+            "Gandhi",
+            3,
+            1
+        ],
+        [
+            "Indonesian",
+            "Gitarja",
+            1,
+            3
+        ],
+        [
+            "Japanese",
+            "Hojo Tokimune",
+            2,
+            3
+        ],
+        [
+            "Japanese",
+            "Tokugawa",
+            1,
+            2
+        ],
+        [
+            "Khmer",
+            "Jayavarman VII",
+            3,
+            2
+        ],
+        [
+            "Kongolese",
+            "Mvemba a Nzinga",
+            2,
+            0
+        ],
+        [
+            "Kongolese",
+            "Nzinga Mbande",
+            2,
+            1
+        ],
+        [
+            "Korean",
+            "Sejong",
+            1,
+            2
+        ],
+        [
+            "Korean",
+            "Seondeok",
+            1,
+            2
+        ],
+        [
+            "Macedonian",
+            "Alexander",
+            0,
+            1
+        ],
+        [
+            "Malian",
+            "Mansa Musa",
+            3,
+            4
+        ],
+        [
+            "Malian",
+            "Sundiata Keita",
+            2,
+            3
+        ],
+        [
+            "Māori",
+            "Kupe",
+            2,
+            3
+        ],
+        [
+            "Mapuche",
+            "Lautaro",
+            2,
+            0
+        ],
+        [
+            "Mayan",
+            "Lady Six Sky",
+            1,
+            4
+        ],
+        [
+            "Mongolian",
+            "Genghis Khan",
+            0,
+            3
+        ],
+        [
+            "Mongolian",
+            "Mongolian Kublai Khan",
+            1,
+            0
+        ],
+        [
+            "Norwegian",
+            "Konge Harald Hardrada",
+            0,
+            3
+        ],
+        [
+            "Norwegian",
+            "Varangian Harald Hardrada",
+            0,
+            4
+        ],
+        [
+            "Nubian",
+            "Amanitore",
+            1,
+            0
+        ],
+        [
+            "Ottoman",
+            "Kanuni Suleiman",
+            0,
+            1
+        ],
+        [
+            "Ottoman",
+            "Muhteşem Suleiman",
+            0,
+            1
+        ],
+        [
+            "Persian",
+            "Cyrus",
+            0,
+            2
+        ],
+        [
+            "Persian",
+            "Nader Shah",
+            0,
+            2
+        ],
+        [
+            "Phoenician",
+            "Dido",
+            0,
+            4
+        ],
+        [
+            "Polish",
+            "Jadwiga",
+            0,
+            3
+        ],
+        [
+            "Portuguese",
+            "João III",
+            1,
+            4
+        ],
+        [
+            "Roman",
+            "Julius Caesar",
+            0,
+            1
+        ],
+        [
+            "Roman",
+            "Trajan",
+            0,
+            2
+        ],
+        [
+            "Russian",
+            "Peter",
+            3,
+            2
+        ],
+        [
+            "Scottish",
+            "Robert the Bruce",
+            1,
+            2
+        ],
+        [
+            "Scythian",
+            "Tomyris",
+            0,
+            3
+        ],
+        [
+            "Spanish",
+            "Philip II",
+            0,
+            3
+        ],
+        [
+            "Sumerian",
+            "Gilgamesh",
+            1,
+            0
+        ],
+        [
+            "Swedish",
+            "Kristina",
+            2,
+            1
+        ],
+        [
+            "Vietnamese",
+            "Bà Triệu",
+            2,
+            0
+        ],
+        [
+            "Zulu",
+            "Shaka",
+            0,
+            1
+        ]
+    ]
+    const grid = document.getElementById('jerseyGrid')
+    const cells = grid.children
+    jerseyData.forEach(entry => {
+        const name = `${entry[1]}<br>(${entry[0]})`
+        const file = entry[1]
+        const primary = entry[2]
+        const secondary = entry[3]
+        if (primary === secondary) return
+        const index = (secondary + 1) * 6 + (primary + 1)
+        const targetCell = cells[index]
+        if (!targetCell) return
+        const jerseyDiv = document.createElement('a')
+        jerseyDiv.classList.add('jersey')
+        jerseyDiv.style.backgroundImage = `url('./jerseys/${file}.webp')`
+        jerseyDiv.innerHTML = name
+        jerseyDiv.href = `https://civilization.fandom.com/wiki/${entry[1].replaceAll(' ', '_')}_(Civ6)`
+        jerseyDiv.target = "_blank"
+        targetCell.appendChild(jerseyDiv)
+    })
+</script>
+</html>
