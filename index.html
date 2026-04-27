@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
             color: #fff;
             text-decoration: none;
         }
+
         html,
         body {
             background-color: #000;
@@ -27,6 +29,7 @@
             width: fit-content;
             height: fit-content;
         }
+
         #jerseyGrid {
             display: grid;
             grid-template-columns: repeat(6, auto);
@@ -35,12 +38,14 @@
             gap: 3px;
             background-color: #000;
         }
+
         .cellH {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 8px;
         }
+
         .cell {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -48,39 +53,51 @@
             padding: 4px;
             gap: 0;
         }
+
         .blank {
             background-color: #111;
         }
+
         .domH {
             background-color: #6c3435;
         }
+
         .sciH {
             background-color: #144d6e;
         }
+
         .culH {
             background-color: #553b68;
         }
+
         .relH {
             background-color: #633f0c;
         }
+
         .dipH {
             background-color: #005551;
         }
+
         .dom {
             background-color: #361a1a;
         }
+
         .sci {
             background-color: #0a2637;
         }
+
         .cul {
             background-color: #2b1d34;
         }
+
         .rel {
             background-color: #312006;
         }
+
         .dip {
             background-color: #002b28;
         }
+
         .jersey {
             display: flex;
             height: 96px;
@@ -96,8 +113,10 @@
             background-size: cover;
             background-position: center;
             border-radius: 16px;
-        }    </style>
+        }
+    </style>
 </head>
+
 <body>
     <div id="jerseyGrid">
         <div class="cellH blank"></div>
@@ -605,6 +624,7 @@
     ]
     const grid = document.getElementById('jerseyGrid')
     const cells = grid.children
+    victories = ["Domination", "Scientific", "Cultural", "Religious", "Diplomatic"]
     jerseyData.forEach(entry => {
         const name = `${entry[1]}<br>(${entry[0]})`
         const file = entry[1]
@@ -620,7 +640,9 @@
         jerseyDiv.innerHTML = name
         jerseyDiv.href = `https://civilization.fandom.com/wiki/${entry[1].replaceAll(' ', '_')}_(Civ6)`
         jerseyDiv.target = "_blank"
+        jerseyDiv.title = `${entry[1]} (${entry[0]})\n\nPrimary: ${victories[entry[2]]}\nSecondary: ${victories[entry[3]]}`
         targetCell.appendChild(jerseyDiv)
     })
 </script>
+
 </html>
